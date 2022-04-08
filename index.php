@@ -11,3 +11,9 @@ function abbrevName($name)
 function summation($n){
   return array_sum(range(1,$n));
 }
+
+
+// Determines if a number is Even or Odd (e.g. 12 => Even).
+function even_or_odd(int $n): string {
+  return $n % 2 ? 'Odd' : 'Even';
+}
