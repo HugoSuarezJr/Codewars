@@ -17,3 +17,18 @@ function summation($n){
 function even_or_odd(int $n): string {
   return $n % 2 ? 'Odd' : 'Even';
 }
+
+function smash(array $words): string {
+  return implode(' ', $words);
+}
+
+function maps($x)
+{
+  return array_map(function($n) {
+    return $n * 2;
+  }, $x);
+}
+
+$arr = [1,2,3];
+
+var_dump(maps($arr));
