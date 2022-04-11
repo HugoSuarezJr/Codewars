@@ -18,10 +18,12 @@ function even_or_odd(int $n): string {
   return $n % 2 ? 'Odd' : 'Even';
 }
 
+// Combine array of string into one string seperated by spaces.
 function smash(array $words): string {
   return implode(' ', $words);
 }
 
+// return an array of integers doubled by itself.
 function maps($x)
 {
   return array_map(function($n) {
@@ -32,3 +34,13 @@ function maps($x)
 $arr = [1,2,3];
 
 var_dump(maps($arr));
+
+function changeToWords($arr){
+  return array_map(function($n){
+    if($n <= 50){
+      return $n = "Level 1";
+    } 
+    return $n = "Level 2";
+  }, $arr);
+}
+
