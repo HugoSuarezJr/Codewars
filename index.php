@@ -41,6 +41,22 @@ function changeToWords($ar){
   }, $ar);
 }
 
-$arr = [1,2,3,100,199,50];
+// Expects 2 integers and the determines if they are opposites of even and odd.
+function lovefunc($flower1, $flower2) {
+if($flower1 % 2 === 0 && $flower2 % 2 !== 0){
+  return true;
+} elseif($flower2 % 2 === 0 && $flower1 % 2 !== 0) {
+  return true;
+}
+  return false;
+}
 
-print_r(changeToWords($arr));
+//Better variation of lovefunc
+function lovefunc2(int $flower1, int $flower2) : bool {
+  return ($flower1 % 2 !== $flower2 % 2);
+}
+
+$male = 4;
+$female = 7;
+
+print_r(lovefunc($male, $female));
