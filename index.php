@@ -31,16 +31,6 @@ function maps($x)
   }, $x);
 }
 
-function changeToWords($ar){
-  return array_map(function($n){
-    if($n <= 50){
-      return $n = "Level 1";
-    } else {
-      return $n = "Level 2";
-    }
-  }, $ar);
-}
-
 // Expects 2 integers and the determines if they are opposites of even and odd.
 function lovefunc($flower1, $flower2) {
 if($flower1 % 2 === 0 && $flower2 % 2 !== 0){
@@ -56,7 +46,24 @@ function lovefunc2(int $flower1, int $flower2) : bool {
   return ($flower1 % 2 !== $flower2 % 2);
 }
 
-$male = 4;
-$female = 7;
+function countPositivesSumNegatives($input) {
+ 
+  $newPositiveArr = array_filter($input, function($n){
+    if($n>0){
+      return $n;
+    }
+  });
 
-print_r(lovefunc($male, $female));
+  $newNegativeArr = array_filter($input, function($n){
+    if($n<0){
+      return $n;
+    }
+  });
+
+  return array_merge([count($newPositiveArr)], [array_sum($newNegativeArr)]);
+}
+
+
+$ranArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15];
+var_dump(countPositivesSumNegatives($ranArr));
+
