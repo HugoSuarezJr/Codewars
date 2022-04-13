@@ -31,16 +31,16 @@ function maps($x)
   }, $x);
 }
 
-$arr = [1,2,3];
-
-var_dump(maps($arr));
-
-function changeToWords($arr){
+function changeToWords($ar){
   return array_map(function($n){
     if($n <= 50){
       return $n = "Level 1";
-    } 
-    return $n = "Level 2";
-  }, $arr);
+    } else {
+      return $n = "Level 2";
+    }
+  }, $ar);
 }
 
+$arr = [1,2,3,100,199,50];
+
+print_r(changeToWords($arr));
