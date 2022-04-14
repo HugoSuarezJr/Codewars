@@ -63,7 +63,29 @@ function countPositivesSumNegatives($input) {
   return array_merge([count($newPositiveArr)], [array_sum($newNegativeArr)]);
 }
 
+// Sloppy correct() function
+// function correct($string) {
+//   return implode(array_map(function ($l){
+//   if($l==='5'){
+//     return 'S';
+//   } elseif ($l==='0'){
+//     return 'O';
+//   } elseif ($l==='1'){
+//     return 'I';
+//   }
+//   return $l;
+// }, str_split($string)));
+// }
 
-$ranArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15];
-var_dump(countPositivesSumNegatives($ranArr));
+// Best correct() function
+
+function correct($string){
+  return str_replace(['5', '1', '0'], ['S', 'I', 'O'], $string);
+}
+
+$thisString = 'H1 5aul 0pen up';
+
+var_dump(correct($thisString));
+
+
 
