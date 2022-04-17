@@ -83,9 +83,13 @@ function correct($string){
   return str_replace(['5', '1', '0'], ['S', 'I', 'O'], $string);
 }
 
-$thisString = 'H1 5aul 0pen up';
+// Sum function just sums up the integers in a given array and return zero if array is empty.
+function sum(array $a): float {
+  return array_sum($a);
+}
 
-var_dump(correct($thisString));
+$arrToSum =  [];
 
+var_dump(sum($arrToSum));
 
 
