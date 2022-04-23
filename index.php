@@ -88,8 +88,15 @@ function sum(array $a): float {
   return array_sum($a);
 }
 
-$arrToSum =  [];
+function greet(){
+  $world = "beautiful";
+  
+  if($world === "beautiful"){
+    return "hello world!"; 
+  }
+  return "goodbye world :(";
+}
 
-var_dump(sum($arrToSum));
+var_export(greet());
 
 
