@@ -97,6 +97,12 @@ function greet(){
   return "goodbye world :(";
 }
 
-var_export(greet());
+function toJadenCase($string) 
+{
+  return ucwords($string);
+}
+$jSmithQuote = "If a book store never runs out of a certain book, does that mean that nobody reads it, or everybody reads it";
+
+var_dump(toJadenCase($jSmithQuote));
 
 
