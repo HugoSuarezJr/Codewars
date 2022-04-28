@@ -103,6 +103,16 @@ function toJadenCase($string)
 }
 $jSmithQuote = "If a book store never runs out of a certain book, does that mean that nobody reads it, or everybody reads it";
 
-var_dump(toJadenCase($jSmithQuote));
+function divisors($n) {
+  $count = 0;
+  for($i=1; $i<=$n; $i++){
+    if(fmod($n, $i) == 0.0 ){
+      $count++;
+    }
+  }
+  return $count;
+}
+
+var_dump(divisors(4));
 
 
