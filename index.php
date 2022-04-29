@@ -117,8 +117,8 @@ function divisors($n) {
 }
 
 function DNA_strand($dna) {
-  return join(array_map(function ($string){
-    switch($string){
+  return  join(array_map(function ($strand){
+    switch($strand){
       case "A":
         return "T";
       case "T":
@@ -136,4 +136,29 @@ function DNA_strand2($dna) {
   return strtr($dna, 'ACGT', 'TGCA');
 }
 
-var_dump(DNA_strand("TTTAACG"));
+$time_start = microtime(true); 
+
+//sample script
+// echo join(array_map(function ($strand){
+//   switch($strand){
+//     case "A":
+//       return "T";
+//     case "T":
+//       return "A";
+//     case "C":
+//       return "G";
+//     case "G":
+//      return "C";
+//   }
+// }, str_split("AACCGGTT")));
+
+echo strtr("AACCGGTT", 'ACGT', 'TGCA');
+
+$time_end = microtime(true);
+
+//dividing with 60 will give the execution time in minutes otherwise seconds
+$execution_time = ($time_end - $time_start)/60;
+
+//execution time of the script
+echo '<b>Total Execution Time:</b> '.number_format((float) $execution_time, 10).' Mins';
+// if you get weird results, use number_format((float) $execution_time, 10) 
