@@ -136,23 +136,53 @@ function DNA_strand2($dna) {
   return strtr($dna, 'ACGT', 'TGCA');
 }
 
+/**
+ * Complete the solution so that it splits the string into pairs of two characters. 
+ * If the string contains an odd number of characters then it should replace the 
+ * missing second character of the final pair with an underscore ('_').
+ * Examples:
+ * 'abc' =>  ['ab', 'c_']
+ * 'abcdef' => ['ab', 'cd', 'ef']
+ */
+// MY SOLUTION
+function solution($str){
+  if($str === ""){
+    return [];
+  } else {
+      return array_map(function ($letter){
+      if(strlen($letter)%2 === 0){
+        return $letter;
+      } else {
+        return $letter.'_';
+      }
+    }, str_split($str, 2));
+  }
+}
+// BETTER SOLUTION
+function betterSolution($str) {
+  if (empty($str))
+    return [];
+  if (strlen($str) % 2 != 0)
+    $str .= "_";
+  return str_split($str, 2);
+}
+
+
+$anyString = "asdfasfasdf";
+
+var_dump(solution($anyString));
+
+
+
+
+/**
+ * Here you can test the speed of your code.
+ */
 $time_start = microtime(true); 
 
 //sample script
-// echo join(array_map(function ($strand){
-//   switch($strand){
-//     case "A":
-//       return "T";
-//     case "T":
-//       return "A";
-//     case "C":
-//       return "G";
-//     case "G":
-//      return "C";
-//   }
-// }, str_split("AACCGGTT")));
 
-echo strtr("AACCGGTT", 'ACGT', 'TGCA');
+
 
 $time_end = microtime(true);
 
@@ -160,5 +190,5 @@ $time_end = microtime(true);
 $execution_time = ($time_end - $time_start)/60;
 
 //execution time of the script
-echo '<b>Total Execution Time:</b> '.number_format((float) $execution_time, 10).' Mins';
+// echo '<b>Total Execution Time:</b> '.number_format((float) $execution_time, 10).' Mins';
 // if you get weird results, use number_format((float) $execution_time, 10) 
