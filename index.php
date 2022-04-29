@@ -1,6 +1,9 @@
 <?php
 
 // Abbreviates name into initials (e.g., Hugo Suarez => H.S).
+
+use function PHPSTORM_META\map;
+
 function abbrevName($name)
 {
   $separateNames = explode(' ', ucwords($name));
@@ -113,6 +116,24 @@ function divisors($n) {
   return $count;
 }
 
-var_dump(divisors(4));
+function DNA_strand($dna) {
+  return join(array_map(function ($string){
+    switch($string){
+      case "A":
+        return "T";
+      case "T":
+        return "A";
+      case "C":
+        return "G";
+      case "G":
+       return "C";
+    }
+  }, str_split($dna)));
+}
 
+// Better way to code above function
+function DNA_strand2($dna) {
+  return strtr($dna, 'ACGT', 'TGCA');
+}
 
+var_dump(DNA_strand("TTTAACG"));
