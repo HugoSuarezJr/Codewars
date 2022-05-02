@@ -167,12 +167,33 @@ function betterSolution($str) {
   return str_split($str, 2);
 }
 
+$alist = [1, 3, 5, 9, 11];
 
-$anyString = "asdfasfasdf";
+function findMissing($list) {
+  $diff1 = $list[1] - $list[0]; //200
+  $diff2 = $list[2] - $list[1]; //100
+  $diff3 = $list[3] - $list[2]; //100
 
-var_dump(solution($anyString));
+  if($diff1 === $diff2){
+    $pattern =  $diff1;
+  } elseif($diff2 === $diff3) {
+    $pattern = $diff2;
+  } elseif($diff1 === $diff3){
+    $pattern = $diff1;
+  }
+
+  for($i=0;$i<count($list);$i++){
+    if($list[$i] + $pattern != $list[$i++]){
+      $missingNum = $list[$i-1];
+    }
+  }
+
+  return $pattern;
+
+}
 
 
+echo findMissing($alist);
 
 
 /**
