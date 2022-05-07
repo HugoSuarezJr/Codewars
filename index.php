@@ -167,30 +167,13 @@ function betterSolution($str) {
   return str_split($str, 2);
 }
 
-$alist = [1, 3, 5, 9, 11];
+$alist = [1, 5, 7, 9];
 
 function findMissing($list) {
-  $diff1 = $list[1] - $list[0]; //200
-  $diff2 = $list[2] - $list[1]; //100
-  $diff3 = $list[3] - $list[2]; //100
-
-  if($diff1 === $diff2){
-    $pattern =  $diff1;
-  } elseif($diff2 === $diff3) {
-    $pattern = $diff2;
-  } elseif($diff1 === $diff3){
-    $pattern = $diff1;
-  }
-
-  for($i=0;$i<count($list);$i++){
-    if($list[$i] + $pattern != $list[$i++]){
-      $missingNum = $list[$i-1];
-    }
-  }
-
-  return $pattern;
-
+  $l = count($list);
+  return ($list[0] + $list[$l - 1]) * ($l + 1) / 2 - array_sum($list);
 }
+var_dump(findMissing($alist));
 
 
 function isIsogram($string) {
@@ -202,9 +185,8 @@ function isIsogram($string) {
   return (count($array) === count(array_unique($array)));
 }
 
-$stringsss= "jlk smof";
+$stringsss= "jlksmof";
 
-var_dump(isIsogram($stringsss));
 
 
 /**
