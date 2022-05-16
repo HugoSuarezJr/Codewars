@@ -173,7 +173,6 @@ function findMissing($list) {
   $l = count($list);
   return ($list[0] + $list[$l - 1]) * ($l + 1) / 2 - array_sum($list);
 }
-var_dump(findMissing($alist));
 
 
 function isIsogram($string) {
@@ -185,8 +184,26 @@ function isIsogram($string) {
   return (count($array) === count(array_unique($array)));
 }
 
-$stringsss= "jlksmof";
+function reverseString($str){
+  // return join(array_reverse(str_split($str))); 
+  return strrev($str);
+}
 
+function isSquare($n){
+  /** 
+   * Simple PHP advanced method 
+   * return gmp_perfect_square($n);
+   */
+
+  if(sqrt($n) === floor(sqrt($n))){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+$nummm = -3;
+var_dump(isSquare($nummm));
 
 
 /**
