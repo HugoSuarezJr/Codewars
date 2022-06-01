@@ -202,8 +202,11 @@ function isSquare($n){
   }
 }
 
-$nummm = -3;
-var_dump(isSquare($nummm));
+function boolToWord(bool $bool): string {
+  return $bool ? "Yes" : "No";
+  }
+
+  var_dump(boolToWord(true));
 
 
 /**
