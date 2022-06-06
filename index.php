@@ -211,7 +211,25 @@ function boolToWord(bool $bool): string {
       return strrev($string);
     }, explode(' ', $str)));
   }
-var_dump(reverseWords("Hello this is the sentence"));
+
+  function groupByOwners(array $files) : array
+  {
+      $result = [];
+  
+      foreach($files as $file => $owner) {
+          $result[$owner][] = $file;
+      }
+  
+      return $result;
+  }
+
+$files = array
+(
+    "Input.txt" => "Randy",
+    "Code.py" => "Stan",
+    "Output.txt" => "Randy"
+);
+var_dump(groupByOwners($files));
 
 /**
  * Here you can test the speed of your code.
