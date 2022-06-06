@@ -206,8 +206,12 @@ function boolToWord(bool $bool): string {
   return $bool ? "Yes" : "No";
   }
 
-  var_dump(boolToWord(true));
-
+  function reverseWords($str) {
+    return implode(' ', array_map(function($string) {
+      return strrev($string);
+    }, explode(' ', $str)));
+  }
+var_dump(reverseWords("Hello this is the sentence"));
 
 /**
  * Here you can test the speed of your code.
