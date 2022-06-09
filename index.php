@@ -229,7 +229,11 @@ $files = array
     "Code.py" => "Stan",
     "Output.txt" => "Randy"
 );
-var_dump(groupByOwners($files));
+function goals (int $laLigaGoals, int $copaDelReyGoals, int $championsLeagueGoals) : int {
+  return array_sum([$laLigaGoals, $copaDelReyGoals, $championsLeagueGoals]);
+}
+
+var_dump(goals(2,3,4));
 
 /**
  * Here you can test the speed of your code.
