@@ -233,7 +233,13 @@ function goals (int $laLigaGoals, int $copaDelReyGoals, int $championsLeagueGoal
   return array_sum([$laLigaGoals, $copaDelReyGoals, $championsLeagueGoals]);
 }
 
-var_dump(goals(2,3,4));
+function square_sum($numbers) : int {
+  return array_sum(array_map(function ($num){
+    return $num * $num;
+  }, $numbers));
+}
+
+var_dump(square_sum([1,2,2]));
 
 /**
  * Here you can test the speed of your code.
