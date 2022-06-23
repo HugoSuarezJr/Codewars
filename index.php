@@ -1,8 +1,23 @@
 <?php
 
+
+function dnaToRna($str) {
+  return join(array_map(function ($dna){
+    if ($dna === 'T'){
+      return "U";
+    }
+    return $dna;
+  }, str_split($str)));
+}
+
+function dnaToRna2($str) {
+  return str_replace("T", "U", $str);
+}
+
+var_dump(dnaToRna("GCAT"));
+
 // Abbreviates name into initials (e.g., Hugo Suarez => H.S).
 
-use function PHPSTORM_META\map;
 
 function abbrevName($name)
 {
@@ -65,6 +80,8 @@ function countPositivesSumNegatives($input) {
 
   return array_merge([count($newPositiveArr)], [array_sum($newNegativeArr)]);
 }
+
+
 
 // Sloppy correct() function
 // function correct($string) {
@@ -238,8 +255,6 @@ function square_sum($numbers) : int {
     return $num * $num;
   }, $numbers));
 }
-
-var_dump(square_sum([1,2,2]));
 
 /**
  * Here you can test the speed of your code.
